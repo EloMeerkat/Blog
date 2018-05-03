@@ -17,7 +17,6 @@ export class ArticleService {
 
   private articleUrl = 'api/articles';  // URL to web api
 
-
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getArticles(): Observable<Article[]> {
@@ -29,6 +28,13 @@ export class ArticleService {
       );
   }
 
+  getArticles_ctgr(category : string): Observable<Article[]> {
+    const url = `${this.articleUrl}/${category}`;
+    return this.http.get<Article[]>(url).pipe(
+        tap(articles => this.log(`fetched articles category=${category}`)),
+        catchError(this.handleError<Article[]>(`getArticles_ctgr category=${category}`, []))
+      );
+  }
   getArticle(id: number): Observable<Article> {
     const url = `${this.articleUrl}/${id}`;
     return this.http.get<Article>(url).pipe(

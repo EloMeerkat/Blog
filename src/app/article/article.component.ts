@@ -15,20 +15,14 @@ import { Location } from '@angular/common';
 
 export class ArticleComponent implements OnInit {
   articles: Article[];
-  ARTICLES: Article[];
 
   constructor(private route: ActivatedRoute, private articleService: ArticleService, private location: Location) { }
 
   getArticles(): void{
-    const category = this.route.snapshot.paramMap.get('type');
+    const category = this.route.snapshot.paramMap.get('category');
     if(category){
-      this.articleService.getArticles()
-        .subscribe(articles => this.ARTICLES = articles);
-      for(var i = 0; i<this.ARTICLES.length; i++) {
-          if(this.ARTICLES[i].category == category){
-            this.articles.push(this.ARTICLES[i]);
-          }
-      }
+      this.articleService.getArticles_ctgr(category)
+        .subscribe(articles => this.articles = articles);
     }
     else{
       this.articleService.getArticles()
