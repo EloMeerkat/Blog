@@ -1,9 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>{{ title }}</h1>
-<nav>
-  <a routerLink="/homepage"> Accueil </a>
-  <a routerLink="/article"> Articles </a>
-</nav>
-<router-outlet></router-outlet>
+<div class="background-image"></div>
+<div class="head">
+  <h1>{{ title }}</h1>
+  <div class="presentation">Les (més)aventures d'une blonde en France, au Canada (et ailleurs) et ses astuces pour y (sur)vivre. Je partage mes visites, mes astuces, des endroits que je recommande (ou pas) et la beauté du paysage. Enjoy ! </div>
+  <nav>
+    <a routerLink="/homepage">Accueil</a>
+    <a routerLink="/articles/photos">Photos</a>
+    <a routerLink="/articles/recipes">Recettes</a>
+    <a routerLink="/articles/travel">Voyage</a>
+    <a routerLink="/articles/other">Autres</a>
+    <a routerLink="/articles">Tous</a>
+  </nav>
+</div>
+<p class="blog-corpus">
+  <router-outlet></router-outlet>
+</p>
 <!-- <app-article></app-article> -->
 <!-- <app-messages></app-messages> -->

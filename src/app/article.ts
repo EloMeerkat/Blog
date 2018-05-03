@@ -3,4 +3,5 @@ export class Article {
   title: string;
   corpus: string;
   date: Date;
+  category: string;
 }

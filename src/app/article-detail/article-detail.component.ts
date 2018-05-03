@@ -32,6 +32,6 @@ export class ArticleDetailComponent implements OnInit {
   save(): void {
    this.articleService.updateArticle(this.article)
      .subscribe(() => this.goBack());
- }
+  }
 
 }

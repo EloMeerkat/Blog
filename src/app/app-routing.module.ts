@@ -9,8 +9,9 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', component: HomepageComponent },
-  { path: 'article', component: ArticleComponent },
-  { path: 'detail/:id', component: ArticleDetailComponent }
+  { path: 'articles', component: ArticleComponent },
+  { path: 'detail/:id', component: ArticleDetailComponent },
+  { path: 'articles/:type', component: ArticleComponent }
 ];
 
 @NgModule({

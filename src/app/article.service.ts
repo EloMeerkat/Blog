@@ -6,7 +6,6 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Article } from './article'
-import { ARTICLES } from './mock-articles'
 import { MessageService } from './message.service'
 
 const httpOptions = {

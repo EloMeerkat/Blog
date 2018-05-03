@@ -12,7 +12,6 @@
   <label>Title:
     <input #articleTitle />
   </label>
-  <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(articleTitle.value); articleTitle.value=''">
     add
   </button>

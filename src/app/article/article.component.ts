@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { DatePipe } from '@angular/common';
 import { Article } from '../article';
-import { ARTICLES } from '../mock-articles';
 import { ArticleService } from '../article.service';
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-article',
@@ -12,12 +15,25 @@ import { ArticleService } from '../article.service';
 
 export class ArticleComponent implements OnInit {
   articles: Article[];
+  ARTICLES: Article[];
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private location: Location) { }
 
   getArticles(): void{
-    this.articleService.getArticles()
-        .subscribe(articles => this.articles = articles);
+    const category = this.route.snapshot.paramMap.get('type');
+    if(category){
+      this.articleService.getArticles()
+        .subscribe(articles => this.ARTICLES = articles);
+      for(var i = 0; i<this.ARTICLES.length; i++) {
+          if(this.ARTICLES[i].category == category){
+            this.articles.push(this.ARTICLES[i]);
+          }
+      }
+    }
+    else{
+      this.articleService.getArticles()
+          .subscribe(articles => this.articles = articles);
+    }
   }
 
   ngOnInit() {
