@@ -1,0 +1,16 @@
+#search-box {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  border: 2px solid;
+  border-color: #999;
+  border-radius: 5px;
+  height: 25px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#search-box:focus {
+    width: 95%;
+}

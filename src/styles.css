@@ -1,0 +1,75 @@
+/* Font initialisation  */
+/*Blog Title*/
+@font-face {
+    font-family: 'Pacifico';
+    src: url('Polices\\pacifico\\Pacifico.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Other title */
+@font-face {
+    font-family: 'Josefin_sans';
+    src: url('Polices\\josefin-sans\\JosefinSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body font */
+@font-face {
+    font-family: 'Roboto';
+    src: url('Polices\\roboto\\Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ------------------------------------------------------*/
+/* Générale */
+
+a { /* Les liens sont en noir et ne sont pas soulignés */
+	color: #FFA526;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+h1 {
+  color: #F8F8F8;
+  font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+  font-size: 300%;
+}
+h2, h3 {
+  color: #695533;
+  font-family: 'Josefin_sans', Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[text], button {
+  color: #757575;
+  font-family: 'Roboto' , Arial, Helvetica, sans-serif;
+}
+
+.create {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #FFF;
+  resize: none;
+}
+
+/* everywhere else */
+* {
+  font-family:'Roboto', Arial, Helvetica, sans-serif;
+}

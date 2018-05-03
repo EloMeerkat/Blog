@@ -1,0 +1,10 @@
+<h3>Derniers Articles</h3>
+<div class="grid gris-pad">
+  <a *ngFor="let article of articles" class="col-1-4" routerLink="/detail/{{article.id}}">
+    <div class="module article">
+      <h4>{{article.title}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-article-search></app-article-search>
