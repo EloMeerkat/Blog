@@ -9,7 +9,8 @@ import { Article } from './article'
 import { MessageService } from './message.service'
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token' })
 };
 
 @Injectable()
@@ -29,7 +30,7 @@ export class ArticleService {
   }
 
   getArticles_ctgr(category : string): Observable<Article[]> {
-    const url = `${this.articleUrl}/${category}`;
+    const url = `${this.articleUrl}/?category=${category}+`;
     return this.http.get<Article[]>(url).pipe(
         tap(articles => this.log(`fetched articles category=${category}`)),
         catchError(this.handleError<Article[]>(`getArticles_ctgr category=${category}`, []))

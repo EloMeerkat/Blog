@@ -27,8 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title : 'Les recettes d`\'El',
         corpis : 'Faisons des Pancakes !',
         date : new Date(Date.now()),
-        category : 'recipes'          
-        }
+        category : 'recipes'}
     ];
     return {articles};
   }
