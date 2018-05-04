@@ -16,7 +16,10 @@ import { Location } from '@angular/common';
 export class ArticleComponent implements OnInit {
   articles: Article[];
 
-  constructor(private route: ActivatedRoute, private articleService: ArticleService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private location: Location) {
+    route.params.subscribe(val => {
+      this.getArticles();
+    }); }
 
   getArticles(): void{
     const category = this.route.snapshot.paramMap.get('category');
